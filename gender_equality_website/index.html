@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Equality Initiative</title>
+    <link rel="icon" href="./assets/icon_logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-background">
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#importance">Importance</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#actions">Actions</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home">
+                <div class="content">
+                    <h1 class="animate-title">Gender Equality Initiative</h1>
+                    <p>Striving for a world where opportunities are unaffected by gender.</p>
+                    <img src="./assets/homepage_bg.png" alt="Gender Equality Symbol" class="home-image">
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="content">
+                    <h2 class="animate-title">About Gender Equality</h2>
+                    <p>Gender equality is the state in which access to rights or opportunities is unaffected by gender.
+                        It is a fundamental human right and a necessary foundation for a peaceful, prosperous, and
+                        sustainable world.
+                    </p>
+                    <img src="./assets/aboutpage_img.jpg" alt="Gender Equality About" class="about-image">
+                </div>
+            </section>
+
+            <section id="importance">
+                <div class="content">
+                    <h2 class="animate-title">Importance of Gender Equality</h2>
+                    <ul>
+                        <li>Promotes equal economic opportunities</li>
+                        <li>Enhances education for all</li>
+                        <li>Improves health and well-being</li>
+                        <li>Reduces violence and discrimination</li>
+                        <li>Strengthens democratic processes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="challenges">
+                <div class="content">
+                    <h2 class="animate-title">Challenges to Gender Equality</h2>
+                    <ol>
+                        <li>Persistent gender stereotypes</li>
+                        <li>Unequal pay and job opportunities</li>
+                        <li>Limited access to education in some regions</li>
+                        <li>Underrepresentation in leadership positions</li>
+                        <li>Gender-based violence</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="actions">
+                <div class="content">
+                    <h2 class="animate-title">Actions to Promote Gender Equality</h2>
+                    <p>Everyone can contribute to gender equality. Here are some actions you can take:</p>
+                    <ul>
+                        <li>Challenge gender stereotypes</li>
+                        <li>Advocate for equal pay and opportunities</li>
+                        <li>Support education for all genders</li>
+                        <li>Encourage women's leadership</li>
+                        <li>Speak out against gender-based discrimination and violence</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Gender Equality Initiative. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            function highlightNavLink() {
+                const scrollPosition = window.scrollY;
+
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        navLinks[index].classList.add('active');
+                        section.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavLink);
+            highlightNavLink();
+        });
+    </script>
+</body>
+
+</html>
