@@ -1,184 +1,288 @@
 /* General CSS */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .gradient-background {
-    background: linear-gradient(199deg, #a87bd6, #be4f77, #aba5de, #c26ee5, #8f6eff, #ffffff);
-    background-size: 360% 360%;
-    animation: gradient-animation 20s ease infinite;
-    color: white;
+  background: linear-gradient(
+    199deg,
+    #a87bd6,
+    #be4f77,
+    #aba5de,
+    #c26ee5,
+    #8f6eff,
+    #ffffff
+  );
+  background-size: 360% 360%;
+  animation: gradient-animation 20s ease infinite;
+  color: white;
 }
 
 @keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
 }
 
 .navbar ul {
-    list-style-type: none;
-    padding: 10px 20px; /* Added padding for spacing */
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Center items */
+  list-style-type: none;
+  padding: 10px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul li {
-    margin: 0 20px; /* Adjusted margin for spacing */
+  margin: 0 20px;
 }
 
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: block;
 }
 
-.navbar ul li a:hover, .navbar ul li a.active {
-    color: #a87bd6;
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #a87bd6;
 }
 
 /* Main Content */
 main {
-    max-width: 800px;
-    padding: 80px 20px 20px; /* Adjusted top padding to avoid overlap with navbar */
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  height: fit-content !important;
+  padding: 30px 20px 20px;
+  border-radius: 10px;
 }
 
 section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s, transform 0.5s;
-    scroll-margin-top: 60px;
-    margin: 40px 0; /* Added margin between sections */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+  scroll-margin-top: 20px;
+  margin: 40px 0;
+  height: fit-content !important;
+}
+
+#home,
+#importance,
+#challenges,
+#actions,
+#quiz {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  height: fit-content !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#home {
+    display: absolute !important;
+    width: 100% !important;
 }
 
 .content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 20px 60px; /* Added bottom padding for spacing */
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-.content p{
-    text-align: center;
+.content p {
+  text-align: center;
 }
 
 /* Headings */
-h1, h2 {
-    color: #ffffff;
-    font-weight: 600;
-    text-align: center;
+h1,
+h2 {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
 }
 
 h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
-p, li {
-    font-weight: 300;
+p,
+li {
+  font-weight: 300;
 }
 
 /* Title Animation */
 .animate-title {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
 }
 
 section.visible .animate-title {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Lists */
-ul, ol {
-    padding-left: 20px;
+ul,
+ol {
+  padding-left: 20px;
 }
 
-.home-image, .about-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
+.home-image,
+.about-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* Quiz Section */
+.quiz-card {
+  display: none; /* Hide all questions by default */
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: opacity 0.5s, transform 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.quiz-card.active {
+  display: block; /* Show the active question */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quiz-card p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.quiz-card label {
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.quiz-navigation button {
+  background-color: #a87bd6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-navigation button:hover {
+  background-color: #8f6eff;
+}
+
+.quiz-result {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-weight: 300;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-    main {
-        padding-top: 80px; /* Adjusted top padding */
-    }
+  main {
+    padding-top: 30px;
+  }
 }
 
 @media (max-width: 600px) {
-    .navbar ul {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
-    }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .navbar ul li {
-        margin: 10px 0; /* Adjusted margin for spacing */
-    }
+  .navbar ul li {
+    margin: 10px 0;
+  }
 
-    main {
-        width: 90%;
-        padding-top: 80px; /* Adjusted top padding */
-        margin: 0 auto;
-    }
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
 
-    h1 {
-        font-size: 1.8em;
-    }
+  h1 {
+    font-size: 1.8em;
+  }
 
-    h2 {
-        font-size: 1.5em;
-    }
+  h2 {
+    font-size: 1.5em;
+  }
 
-    .home-image, .about-image {
-        width: 100%;
-        max-width: 100%;
-    }
+  .home-image,
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
