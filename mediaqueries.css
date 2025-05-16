@@ -1,0 +1,290 @@
+/* Styling for new pages: success_stories.html and resources.html */
+
+/* Style for individual story articles on success_stories.html */
+.story {
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.story h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.story p a {
+  color: #f0e6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.story p a:hover {
+  text-decoration: underline;
+}
+
+/* Style for resource categories on resources.html */
+.resource-category {
+  margin-bottom: 25px;
+}
+
+.resource-category h2 {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.resource-category ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resource-category ul li a {
+  color: #f0e6ff;
+  text-decoration: none;
+}
+
+.resource-category ul li a:hover {
+  text-decoration: underline;
+}
+
+/* General section styling for new pages if needed */
+#success-stories-content .content,
+#resources-content .content {
+  padding-top: 20px; /* Add some padding if navbar is fixed */
+}
+
+/* === NAVBAR TOGGLE STYLES === */
+.navbar-toggle {
+  display: none; /* Hidden by default, shown in media query */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute; /* Position it within the navbar */
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1010; /* Ensure it's above other navbar elements, and open menu */
+  box-sizing: border-box;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 1px;
+}
+
+/* Hamburger to X animation */
+.navbar-toggle.active .icon-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggle.active .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.active .icon-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === MOVED AND ENHANCED MEDIA QUERIES === */
+
+/* General Responsive Adjustments for the entire site */
+
+/* Tablet and larger mobile devices */
+@media (max-width: 1024px) {
+  main {
+    padding-top: 70px; /* Ensure content isn't hidden by fixed navbar */
+    width: 90%;
+    margin: 0 auto; /* Center main content */
+  }
+
+  .navbar {
+    padding: 5px 15px; /* Adjust navbar padding itself for consistency */
+  }
+
+  .container {
+    padding-top: 70px; /* Adjust container padding for fixed navbar */
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) { 
+  .navbar {
+    padding: 0 10px; /* Consistent horizontal padding */
+    min-height: 55px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    left: 0; /* Ensure it spans full width */
+    right: 0; /* Ensure it spans full width */
+    width: 100%; /* Override if any other rule interferes */
+    box-sizing: border-box;
+  }
+
+  .navbar-toggle {
+    display: block; 
+    right: 10px; /* Adjusted to align with navbar padding */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    position: absolute; 
+    top: 100%; /* Position below the navbar header part - usually equals min-height of .navbar */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.95); /* Slightly more opaque for better readability */
+    padding: 0; /* Remove padding, apply to links instead */
+    display: none; 
+    max-height: calc(100vh - 55px); /* Adjust 55px based on actual navbar height */
+    overflow-y: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1005; /* Below toggle when closed, but above content */
+  }
+
+  .navbar ul.navbar-ul-open {
+    display: flex; /* Show menu */
+    z-index: 1009; /* Above other navbar items, but below toggle if it animates on top */
+  }
+
+  .navbar ul li {
+    margin: 0; 
+    width: 100%; 
+    text-align: center; 
+  }
+
+  .navbar ul li a {
+    padding: 15px 20px; /* Adjusted padding for tap targets */
+    width: 100%;
+    box-sizing: border-box; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95em; /* Adjust font size for mobile nav */
+  }
+
+  .navbar ul li:last-child a {
+    border-bottom: none; 
+  }
+
+  main {
+    padding: 65px 10px 20px 10px; /* Adjusted top padding to match navbar min-height, L/R padding reduced */
+    width: auto; /* Allow it to take full width minus padding */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .container {
+    padding-top: 0; /* Container no longer needs top padding if main has it */
+    gap: 10px; /* Reduce gap for smaller screens */
+    flex-direction: column; /* Stack items in container on mobile if needed */
+    align-items: center; /* Center items if stacked */
+  }
+
+  .content {
+    padding: 15px 10px; /* Consistent padding for content blocks */
+    width: 100%; /* Make content blocks take full available width */
+    box-sizing: border-box;
+  }
+
+  /* Ensure sections also have appropriate top margin if navbar is fixed */
+  section {
+    scroll-margin-top: 60px; /* Adjust for fixed navbar height */
+    margin-top: 20px; /* Reduce top margin for sections on mobile */
+    margin-bottom: 20px;
+    min-height: auto; /* Allow sections to be shorter on mobile */
+  }
+  #home,
+  #importance,
+  #challenges,
+  #actions,
+  #quiz {
+    padding: 15px; /* Add some padding to these sections */
+  }
+
+  .home-image,
+  .about-image {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2em; /* Further adjust h1 for mobile */
+  }
+
+  h2 {
+    font-size: 1.6em; /* Further adjust h2 for mobile */
+  }
+
+  /* Quiz Specific Mobile Adjustments */
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .quiz-navigation button {
+    width: 100%; /* Make quiz buttons full width */
+    padding: 12px 15px;
+  }
+
+  /* Adjustments for story and resource category on mobile */
+  .story, .resource-category {
+    padding: 10px;
+  }
+
+  .resource-category h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+    min-height: 50px;
+    padding: 0 5px;
+  }
+  .navbar-toggle {
+    right: 5px;
+  }
+  main {
+    padding: 60px 5px 15px 5px; /* Adjust top padding for navbar height */
+  }
+  section {
+    scroll-margin-top: 55px; /* Adjust for fixed navbar height */
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  p, li, label {
+    font-size: 0.9em; 
+  }
+  .quiz-card p {
+    font-size: 0.95em; /* Question text slightly larger */
+  }
+
+  .navbar ul li a {
+    font-size: 0.85em; 
+    padding: 12px 15px;
+  }
+  .quiz-navigation button {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+} 
